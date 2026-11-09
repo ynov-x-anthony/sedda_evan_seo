@@ -54,9 +54,11 @@ export default function Product() {
   const product = products.find((p) => p.slug === slug)
 
   useDocumentMeta({
-    title: product ? `${product.name} | CycloShop` : 'Produit introuvable | CycloShop',
-    description: product?.description,
-  })
+      title: product
+        ? `${product.name} | Mobilité urbaine CycloShop`
+        : 'Produit introuvable | Mobilité urbaine CycloShop',
+      description: product?.description ?? 'La fiche produit demandée est introuvable sur CycloShop.',
+    })
 
   if (!product) return <p className="page">Produit introuvable.</p>
 
